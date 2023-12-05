@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+:root {
+   --soft-orange: hsl(35, 77%, 62%);
+   --soft-red: hsl(5, 85%, 63%);
+   --off-white: hsl(36, 100%, 99%);
+   --grayish-blue: hsl(233, 8%, 79%);
+   --very-grayish-blue: hsl(236, 13%, 42%);
+   --very-dark-blue: hsl(240, 100%, 5%);
+
+   --fz-15: 15px;
+
+   --fw-700: 700;
+   --fw-800: 800;
+   --fw-900: 900;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, p {
+    margin: 0;
+}
+
+p {
+    font-size: var(--fz-15);
+}
+
+nav ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* #region header  */
+header, section {
+    padding: 20px 100px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    flex-direction: row;
+}
+
+.nav-container ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px;
+    color: var(--very-grayish-blue);
+}
+
+.burger-menu {
+    display: none;
+}
+
+.menu-close {
+    display: none;
+}
+
+
+@media (max-width: 375px) {
+    .header-container {
+        width: 85%;
+        margin: 2rem 0;
+    }
+    
+    .nav-container {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-container.active {
+        position: absolute;
+        background-color: var(--off-white);
+        z-index: 11;
+        width: 70%;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        gap: 100px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: column; 
+        position: fixed;
+        padding: 20px 30px;
+    }
+
+    .nav-container.active ul {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        flex-basis: 60%;
+        margin: 0;
+    }
+
+    .nav-container.active ul li {
+        font-size: 18px;
+
+    }
+
+    .menu-close {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        margin-left: auto;
+    }
+}
+
+/* #endregion */
+
+/* #region section-1 */
+.section-1-container {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: 20px;
+}
+
+.container-left-top img {
+    width: 100%;
+}
+
+.container-left-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 80px;
+    margin-top: 20px;
+}
+
+.container-left-bottom h1 {
+    font-size: 64px;
+    font-weight: var(--fw-900);
+}
+
+.container-bottom-text {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.container-bottom-text p {
+    line-height: 200%;
+    color: var(--very-grayish-blue);
+    font-size: 18px;
+}
+
+.container-bottom-text button {
+  padding: 16px 48px;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  background-color: var(--soft-red);
+  border: none;
+  color: var(--off-white);
+  font-weight: var(--fw-700);
+  letter-spacing: 5px;
+  cursor: pointer;
+}
+
+.container-right {
+    background-color: var(--very-dark-blue);
+    padding: 30px;
+    color: white;
+}
+
+.container-right-title {
+    color: var(--soft-orange);
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.news {
+    margin: 20px 0;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.news-container {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.news h1 {
+    font-size: 20px;
+}
+
+.news p {
+    color: var(--grayish-blue);
+}
+
+.news hr {
+    background-color: var(--very-grayish-blu);
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    header, section {
+        padding: 20px;
+    }
+    .section-1-container {
+        grid-template-rows: 50% 50%;
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .container-left-bottom {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .news {
+        width: 100%;
+    }
+
+    .news hr {
+        width: 100%;
+    }
+}
+
+@media (max-width: 375px) {
+    .section-1-container {
+        gap: 20px;
+    }
+    .container-left-top img{
+        height: 100%;
+    }
+
+    .container-left-bottom {
+        gap: 20px;
+    }
+    .container-left-bottom h1 {
+        font-size: 32px;
+    }
+
+    .container-left-bottom p {
+        font-size: 15px;
+    }
+
+    .container-right {
+        height: 100%;
+    }
+
+    .news-container {
+        gap: 10px;
+    }
+
+    .news {
+        gap: 5px;
+    }
+}
+/* #endregion */
+
+/* #region section-2 */
+.section-2-container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 40px;
+}
+
+.top-news {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.top-news img {
+    width: 40%;
+    height: 70%;
+}
+
+.top-news-text {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.top-news-text h1 {
+    font-size: 32px;
+    color: var(--grayish-blue);
+    font-weight: var(--fw-700);
+}
+
+.top-news-text h3 {
+    font-weight: var(--fw-800);
+}
+
+.top-news-text p {
+    color: var(--very-grayish-blue);
+    line-height: 200%;
+}
+
+@media (max-width: 768px) {
+    .section-2-container {
+        grid-template-rows: 33% 33% 33%;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 50px;
+    }
+
+    .top-news img {
+        width: auto;
+        height: auto;
+    }
+}
+
+@media (max-width: 375px) {
+    .top-news {
+        flex-direction: column;
+    }
+
+}
+/* #endregion */
+
+.attribution {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    footer {
+        margin-top: 50px;
+    } 
+}
+
